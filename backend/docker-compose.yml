@@ -1,0 +1,23 @@
+version: '3.8'
+services: 
+  app:
+    container_name: backend-container
+    restart: always
+    build: .
+    ports: 
+      - "4000:4000"
+    depends_on: 
+      - mongo
+  mongo:
+    container_name: mongo-backend
+    image: mongo
+    expose: 
+      - "27017"
+    ports: 
+      - "27017:27017"
+    volumes: 
+      - backendDB:/data/db
+
+volumes: 
+  backendDB:
+
