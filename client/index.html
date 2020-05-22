@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>client</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script>
+    fetch('http://'+location.hostname+':8081/posts')
+  .then(response => response.json())
+  .then(data => console.log(data));
+  </script>
+</body>
+
+</html>
